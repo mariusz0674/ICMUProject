@@ -1,7 +1,7 @@
 #include "MainEngine.h"
 #include "ICMUProject.h"
 #include <windows.h>
-
+//eloo
 ICMUProject::ICMUProject(QWidget *parent)
     : QMainWindow(parent){
     ui.setupUi(this);
@@ -151,13 +151,21 @@ void ICMUProject::on_sharpTresholdSlider_valueChanged(int val){
     QString label = "Treshol: ";
     label += QString::number(0.1 * val);
     ui.sharpTresholdLabel->setText(label);
-    ICMOEngine.unsharpMask(ui.sharpSelectSigma->currentIndex(), ui.sharpTresholdSlider->value(), ui.sharpAmountSlider->value() * 0.1);
+    if (ui.sharpViewLive->isChecked() == true) {
+        ICMUProject::on_sharpApply_clicked();
+    }
 }
 
 void ICMUProject::on_sharpAmountSlider_valueChanged(int val){
     QString label = "Amount: ";
     label += QString::number(0.1 * val);
     ui.sharpAmountLabel->setText(label);
+    if (ui.sharpViewLive->isChecked() == true) {
+        ICMUProject::on_sharpApply_clicked();
+    }
+}
+
+void ICMUProject::on_sharpApply_clicked(){
     ICMOEngine.unsharpMask(ui.sharpSelectSigma->currentIndex(), ui.sharpTresholdSlider->value(), ui.sharpAmountSlider->value() * 0.1);
 }
 
@@ -165,6 +173,10 @@ void ICMUProject::on_morphKernelSlider_valueChanged(int val){
     QString label = "Kernel: ";
     label += QString::number(val);
     ui.morphKernelSliderLabel->setText(label);
+    if (ui.morphoViewLive->isChecked() == true) {
+        ICMUProject::on_morphoApply_clicked();
+    }
+  //  if(ui.morphoViewLive.is)
 }
 
 void ICMUProject::on_morphoApply_clicked() {

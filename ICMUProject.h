@@ -49,6 +49,7 @@ private slots:
 
     void on_sharpTresholdSlider_valueChanged(int);
     void on_sharpAmountSlider_valueChanged(int);
+    void on_sharpApply_clicked();
 
     void on_morphKernelSlider_valueChanged(int);
     void on_morphoApply_clicked();
