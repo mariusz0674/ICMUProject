@@ -8,6 +8,7 @@
 #include <QMainWindow>
 
 enum colorSpace { original, grey };
+enum filterOper { medianFiltrType, avgFiltrType };
 enum morphoOper { mClose, mOpen, mDilate, mErode, mCross, mEllipse, mGradient, mBlackhat, mTophat };
 class OperationImage
 {
@@ -40,7 +41,7 @@ public:
 	cv::Mat ContrastBrightness(float contrast, float btightness);
 
 	cv::Mat filterMedian(int ksize);
-
+	cv::Mat filters(int ksize, filterOper operTypt);
 	cv::Mat canny(double treshold1, double treshold2);
 	cv::Mat noiseGaussian(double mean, double dev);
 

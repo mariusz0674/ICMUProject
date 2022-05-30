@@ -39,10 +39,11 @@ private slots:
     void on_addBSlider_valueChanged(int);
 
     void on_filtrSizeSlider_valueChanged(int);
-    void on_filterMedianApply_clicked();
+    void on_filtrApplyButton_clicked();
 
     void on_cannyXSlider_valueChanged(int);
-    void on_cannyYSlider_valueChanged(int);
+    void on_cannyApply_clicked();
+
 
     void on_noiseMeanSlider_valueChanged(int);
     void on_noiseDeviationSlider_valueChanged(int);

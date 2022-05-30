@@ -53,7 +53,7 @@ public:
 	void redoChanges();
 	void changeContrastBrightnes(float Contrast, float Brightness);
 	void addSubRGB(int R, int G, int B);
-	void filterMedian(int ksize);
+	void filters(int ksize, filterOper filterType);
 	void canny(double treshold1, double treshold2);
 	void addNoiseGaussian(double mean, double dev);
 	void unsharpMask(double sigma, double treshold, double amount);

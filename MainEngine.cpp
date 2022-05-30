@@ -181,14 +181,14 @@ void MainEngine::addSubRGB(int R, int G, int B){
 	displayImageInLabel(mainImageB.getImagePtr(), ui->mainImageBLabel);
 }
 
-void MainEngine::filterMedian(int ksize){
-	cv::Mat img = mainImageA.filterMedian(ksize);
+
+
+void MainEngine::filters(int ksize, filterOper filterType){
+	cv::Mat img = mainImageA.filters(ksize, filterType);
 	mainImageB.setNewImage(&img);
 	mainImageB.setiageColorSpace(mainImageA.getColorSpace());
 	displayResultsExtension();
 	displayImageInLabel(mainImageB.getImagePtr(), ui->mainImageBLabel);
-
-
 }
 
 void MainEngine::canny(double treshold1, double treshold2){

@@ -187,13 +187,11 @@ void OperationImage::setiageColorSpace(colorSpace _colorBits){
 	imageColorSpace = _colorBits;
 }
 
-colorSpace OperationImage::getColorSpace()
-{
+colorSpace OperationImage::getColorSpace(){
 	return imageColorSpace;
 }
 
-void OperationImage::updateinaxValues()
-{
+void OperationImage::updateinaxValues(){
 	minMaxLoc(*OperateImage, &minVal, &maxVal);
 }
 
@@ -206,16 +204,6 @@ cv::Mat OperationImage::addSubRGB(int R = 0, int G = 0, int B = 0) {
 		return *OperateImage;
 	}
 	Mat img = OperateImage->clone();
-
-	//unsigned char* input = (unsigned char*)(img.data);
-	//int i, j, r, g, b;
-	//for (int i = 0; i < img.cols; i++) {
-	//	for (int j = 0; j < img.rows*3; j++) {
-	//		input[img.cols * j + i] += B;
-	//		g = input[img.cols * j + i + 1] += G;
-	//		r = input[img.cols * j + i + 2] += R;
-	//	}
-	//}
 	Mat Bands[3];
 	split(img, Bands);
 	std::vector<Mat> channels = { Bands[0],Bands[1],Bands[2] };
@@ -227,8 +215,6 @@ cv::Mat OperationImage::addSubRGB(int R = 0, int G = 0, int B = 0) {
 }
 
 cv::Mat OperationImage::ContrastBrightness(float contrast, float btightness){
-	//Mat new_image = Mat::zeros(OperateImage->size(), OperateImage->type());
-
 	Mat new_image = OperateImage->clone();
 	printf("penios");
 	OperateImage->convertTo(new_image, -1, contrast, btightness);
@@ -239,6 +225,19 @@ cv::Mat OperationImage::filterMedian(int ksize){
 	Mat newImage = Mat::zeros(OperateImage->size(), OperateImage->type());
 	try { medianBlur(*OperateImage, newImage, ksize); }
 	catch (Exception e) { printf("hii"); }
+	return newImage;
+}
+
+cv::Mat OperationImage::filters(int ksize, filterOper operTypt){
+	Mat newImage = Mat::zeros(OperateImage->size(), OperateImage->type());
+	switch (operTypt) {
+		case medianFiltrType: {
+			medianBlur(*OperateImage, newImage, ksize);
+		}break;
+		case avgFiltrType: {
+			blur(*OperateImage, newImage, Size2i(ksize, ksize));
+		}break;
+	}
 	return newImage;
 }
 

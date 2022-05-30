@@ -105,30 +105,39 @@ void ICMUProject::on_filtrSizeSlider_valueChanged(int val){
     label += QString::number(1+2*val);
     ui.filtrSizeLabel->setText(label);
     //ICMOEngine.addSubRGB(ui.addRSlider->value(), ui.addGSlider->value(), ui.addBSlider->value());
-    ICMOEngine.filterMedian(1 + 2 * ui.filtrSizeSlider->value());
-
+    if (ui.filterViewLive->isChecked()) {
+        ICMUProject::on_filtrApplyButton_clicked();
+    }
 }
 
-void ICMUProject::on_filterMedianApply_clicked(){
-    ICMOEngine.filterMedian(1+2*ui.filtrSizeSlider->value());
-
+void ICMUProject::on_filtrApplyButton_clicked(){
+    switch (ui.filtrTypeSelect->currentIndex()){
+    case medianFiltrType:
+        ICMOEngine.filters(1 + 2 * ui.filtrSizeSlider->value(), medianFiltrType);
+        break;
+    case avgFiltrType:
+        ICMOEngine.filters(1 + 2 * ui.filtrSizeSlider->value(), avgFiltrType);
+        break;
+    default:
+        break;
+    }
 }
+
+
 
 void ICMUProject::on_cannyXSlider_valueChanged(int val){
-    QString label = "Tr x: ";
+    QString label = "Threshold: ";
     label += QString::number(10*val);
     ui.cannyXLabel->setText(label);
-    ICMOEngine.canny(ui.cannyXSlider->value()*10, ui.cannyYSlider->value()*10);
-
+    if (ui.cannyViewLive->isChecked()) {
+        ICMUProject::on_cannyApply_clicked();
+    }
 }
 
-void ICMUProject::on_cannyYSlider_valueChanged(int val){
-    QString label = "Tr y: ";
-    label += QString::number(10 * val);
-    ui.cannyYLabel->setText(label);
-    ICMOEngine.canny(ui.cannyXSlider->value() * 10, ui.cannyYSlider->value() * 10);
-
+void ICMUProject::on_cannyApply_clicked(){
+    ICMOEngine.canny(ui.cannyXSlider->value() * 10, 10);
 }
+
 
 void ICMUProject::on_noiseMeanSlider_valueChanged(int val){
     QString label = "Mean: ";
@@ -148,7 +157,7 @@ void ICMUProject::on_noiseDeviationSlider_valueChanged(int val){
 
 
 void ICMUProject::on_sharpTresholdSlider_valueChanged(int val){
-    QString label = "Treshol: ";
+    QString label = "Threshold: ";
     label += QString::number(0.1 * val);
     ui.sharpTresholdLabel->setText(label);
     if (ui.sharpViewLive->isChecked() == true) {
