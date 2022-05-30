@@ -402,10 +402,13 @@
          <string notr="true"/>
         </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::Box</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
+        </property>
+        <property name="midLineWidth">
+         <number>2</number>
         </property>
         <widget class="QComboBox" name="extensionSelect">
          <property name="geometry">
@@ -564,7 +567,7 @@
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>-160</y>
+           <y>0</y>
            <width>400</width>
            <height>2000</height>
           </rect>
@@ -581,12 +584,22 @@
            <height>2000</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">scrollAreaWidgetContents{
+	border-style: dotted;
+}</string>
+         </property>
          <widget class="QFrame" name="frame">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>420</width>
+            <width>402</width>
             <height>171</height>
            </rect>
           </property>
@@ -597,10 +610,16 @@
            </sizepolicy>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="qBinaryzationTrasholdSlider">
            <property name="geometry">
@@ -680,6 +699,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -704,6 +724,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -725,6 +746,7 @@
            <property name="font">
             <font>
              <pointsize>12</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -750,15 +772,18 @@
            <rect>
             <x>0</x>
             <y>170</y>
-            <width>481</width>
+            <width>402</width>
             <height>161</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="ContrastSlider">
            <property name="geometry">
@@ -816,6 +841,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -834,6 +860,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -853,7 +880,11 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
+           </property>
+           <property name="midLineWidth">
+            <number>2</number>
            </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-style:italic;&quot;&gt;Contrast Brightness Control&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -868,15 +899,18 @@
            <rect>
             <x>0</x>
             <y>330</y>
-            <width>481</width>
+            <width>402</width>
             <height>161</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="addRSlider">
            <property name="geometry">
@@ -947,6 +981,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -965,6 +1000,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -983,6 +1019,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1002,6 +1039,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1017,15 +1055,18 @@
            <rect>
             <x>0</x>
             <y>620</y>
-            <width>481</width>
+            <width>402</width>
             <height>121</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="filtrSizeSlider">
            <property name="geometry">
@@ -1061,6 +1102,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1080,6 +1122,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1124,6 +1167,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1162,15 +1206,18 @@
            <rect>
             <x>0</x>
             <y>490</y>
-            <width>481</width>
+            <width>402</width>
             <height>131</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QLabel" name="label_6">
            <property name="geometry">
@@ -1185,6 +1232,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1247,6 +1295,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1281,15 +1330,18 @@
            <rect>
             <x>0</x>
             <y>740</y>
-            <width>481</width>
+            <width>402</width>
             <height>181</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="sharpTresholdSlider">
            <property name="geometry">
@@ -1341,6 +1393,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1359,6 +1412,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1377,6 +1431,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1396,6 +1451,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1530,15 +1586,18 @@
            <rect>
             <x>0</x>
             <y>920</y>
-            <width>481</width>
+            <width>402</width>
             <height>181</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="morphKernelSlider">
            <property name="geometry">
@@ -1571,6 +1630,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1589,6 +1649,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1608,6 +1669,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1704,15 +1766,18 @@
            <rect>
             <x>0</x>
             <y>1100</y>
-            <width>600</width>
+            <width>402</width>
             <height>101</height>
            </rect>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Box</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
           </property>
           <widget class="QSlider" name="cannyXSlider">
            <property name="geometry">
@@ -1748,6 +1813,7 @@
            <property name="font">
             <font>
              <pointsize>13</pointsize>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
@@ -1767,6 +1833,7 @@
             <font>
              <pointsize>19</pointsize>
              <bold>true</bold>
+             <kerning>true</kerning>
             </font>
            </property>
            <property name="text">
