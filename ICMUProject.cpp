@@ -6,8 +6,7 @@ ICMUProject::ICMUProject(QWidget *parent)
     : QMainWindow(parent){
     ui.setupUi(this);
     ICMOEngine = MainEngine(&ui);
-    ICMOEngine.refresWorkspace();
-
+    //ICMOEngine.refresWorkspace();
 }
 
 void ICMUProject::on_qBinaryzationApplyButton_clicked(){
@@ -25,11 +24,6 @@ void ICMUProject::on_qBinaryzationTrasholdSlider_valueChanged(int _treshold){
     ui.qBinaryzationTrasholdValue->setText(QString::number(_treshold));
 }
 
-void ICMUProject::on_hujemuje_clicked(){
-    ICMOEngine.refresWorkspace();
-
-
-}
 
 void ICMUProject::on_saveImage_clicked(){
     QString filters = "Image PNG (*.png) ;; Image JPEG (*.jpeg)";

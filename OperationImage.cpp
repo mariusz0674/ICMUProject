@@ -216,7 +216,6 @@ cv::Mat OperationImage::addSubRGB(int R = 0, int G = 0, int B = 0) {
 
 cv::Mat OperationImage::ContrastBrightness(float contrast, float btightness){
 	Mat new_image = OperateImage->clone();
-	printf("penios");
 	OperateImage->convertTo(new_image, -1, contrast, btightness);
 	return new_image;
 }

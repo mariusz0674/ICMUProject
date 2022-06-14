@@ -24,7 +24,6 @@ private:
 private slots:
     void on_qBinaryzationApplyButton_clicked();
     void on_qBinaryzationTrasholdSlider_valueChanged(int _trashold);
-    void on_hujemuje_clicked();
     void on_saveImage_clicked();
     void on_importImage_clicked();
     void on_appleChanges_clicked();
