@@ -26,14 +26,14 @@ void ICMUProject::on_qBinaryzationTrasholdSlider_valueChanged(int _treshold){
 
 
 void ICMUProject::on_saveImage_clicked(){
-    QString filters = "Image PNG (*.png) ;; Image JPEG (*.jpeg)";
+    QString filters = "Image PNG (*.png) ;; Image JPEG (*.jpeg) ;; Image JPG (*.jpg)";
     QString path = QFileDialog::getSaveFileName(this, "Save image", QDir::homePath(), filters);
     if (path == "" || path == " ") return;
     ICMOEngine.saveImage(path.toStdString());
 }
 
 void ICMUProject::on_importImage_clicked(){
-    QString filters = "Image PNG (*.png) ;; Image JPEG (*.jpeg)";
+    QString filters = "Image PNG (*.png) ;; Image JPEG (*.jpeg) ;; Image JPG (*.jpg)";
     QString path = QFileDialog::getOpenFileName(this, "Pick Iage", QDir::homePath(), filters);
     if (path == "" || path == " ") return;
     ICMOEngine.upluadNewImage(path.toStdString());
@@ -55,7 +55,7 @@ void ICMUProject::on_extensionSelect_currentIndexChanged(int _selected) {
         ICMOEngine.changeExtansionView(widmo);
     }
     else {
-        printf("penisss");
+        printf("Error");
     }
 }
 
