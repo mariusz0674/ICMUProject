@@ -16,5 +16,5 @@ ICMO is a tool illustrating the behavior of an image during and after typical op
 - Perform opening and closing operations
 - Choose your own image for modification
 - Save the modified image.
-- 
+
 QT environment was used
